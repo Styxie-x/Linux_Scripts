@@ -1,0 +1,13 @@
+# update to latest mirror
+sudo reflector --country France,Germany --latest 10 --protocol https --sort rate --save /etc/pacman.d/mirrorlist
+
+# Clear the old sync data:
+sudo pacman -Syy
+
+#it refreshes the "store" list and upgrades everything at once.
+sudo pacman -Syu
+
+
+# 2. Updating your AUR apps
+
+paru -Sua
